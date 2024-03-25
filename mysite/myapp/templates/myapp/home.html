@@ -1,96 +1,121 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Services</title>
-    <!-- Include Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        /* Ensure all card images have the same size */
-        .card-img-top {
-            width: 100px; /* or any size you wish */
-            height: 100px; /* maintain the aspect ratio */
-            object-fit: contain; /* this prevents images from being stretched */
-            margin: 0 auto; /* center the image */
-        }
-    </style>
-</head>
-<body>
+{% extends 'myapp/base.html' %} {% load static %} {% block title %}Home{% endblock title %} {% block content %}
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Cloud Services</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <!-- Add more navbar items here if needed -->
-            </ul>
+<h2 class="text-center mt-1 mb-2">
+
+    Explore Our Cloud Services</h2>
+<div class="container mt-5">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card">
+                <img src="{% static 'images/aws_icon.jpg' %}" class="card-img-top p-3" alt="Cloud Icon">
+                <h5 class="text-center card-title">AWS Cloud</h5>
+                <div class="card-overlay">
+                    <h5 class="text-center card-title">AWS Cloud Automation</h5>
+
+                    <p class="card-text">Experience seamless deployment with our AWS Cloud Automated Service. With just a single click, you can deploy multiple services.</p>
+                    <div class="automation-services">
+                        <h6>Available Services for Automation:</h6>
+                        <div class="services">
+                            <div>EC2</div>
+                            <div>VPC</div>
+                            <div>Subnet</div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-1">
+                        <a href="{% url 'aws' %}" class="btn btn-primary">Explore</a>
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </nav>
-
-    <!-- Cards -->
-    <div class="container mt-5">
-        <div class="row">
-            <!-- Repeat this block for each cloud service -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="{% static 'images/aws_icon.jpg' %}" class="card-img-top" alt="Cloud Icon">
-                    <div class="card-body">
-                        <h5 class="card-title">AWS Cloud</h5>
-                        <p class="card-text">Description of the cloud service goes here.</p>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{% static 'images/azure_icon.png' %}" class="card-img-top p-3" alt="Cloud Icon">
+                <h5 class="text-center card-title">Azure Cloud</h5>
+                <div class="card-overlay">
+                    <h5 class="text-center card-title">Azure Cloud Automation</h5>
+                    <p class="card-text">Streamline your cloud deployment process with our Azure Cloud Automated Service. With a single click, you can initiate the deployment of multiple services</p>
+                    <div class="automation-services">
+                        <h6>Available Services for Automation:</h6>
+                        <div class="services">
+                            <div>EC2</div>
+                            <div>VPC</div>
+                            <div>Subnet</div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-1">
+                        <a href="{% url 'azure' %}" class="btn btn-primary">Explore</a>
                     </div>
                 </div>
             </div>
-            <!-- ... other cards ... -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="/path/to/cloud-icon.png" class="card-img-top" alt="Cloud Icon">
-                    <div class="card-body">
-                        <h5 class="card-title">Cloud Service</h5>
-                        <p class="card-text">Description of the cloud service goes here.</p>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{% static 'images/vmware_icon.png' %}" class="card-img-top p-3" alt="Cloud Icon">
+                <h5 class="text-center card-title">VMware Cloud</h5>
+                <div class="card-overlay">
+                    <h5 class="text-center card-title">VMware Cloud Automation</h5>
+                    <p class="card-text">Accelerate your cloud journey with our VMware Cloud Automated Service. By automating deployment tasks, we make it effortless to provision multiple services</p>
+                    <div class="automation-services">
+                        <h6>Available Services for Automation:</h6>
+                        <div class="services">
+                            <div>EC2</div>
+                            <div>VPC</div>
+                            <div>Subnet</div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-1">
+                        <a href="{% url 'vmware' %}" class="btn btn-primary">Explore</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="/path/to/cloud-icon.png" class="card-img-top" alt="Cloud Icon">
-                    <div class="card-body">
-                        <h5 class="card-title">Cloud Service</h5>
-                        <p class="card-text">Description of the cloud service goes here.</p>
-                    </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{% static 'images/gcp.png' %}" class="card-img-top p-3" alt="Cloud Icon">
+                <h5 class="text-center card-title">Google Cloud Platform</h5>
+                <div class="card-overlay">
+                    <h5 class="text-center card-title">Google Cloud Platform Automation</h5>
+                    <p class="card-text">Empower your projects with our GCP Automated Service, designed to simplify deployment on Google Cloud Platform.
+                        <div class="automation-services">
+                            <h6>Available Services for Automation:</h6>
+                            <div class="services">
+                                <div>EC2</div>
+                                <div>VPC</div>
+                                <div>Subnet</div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-1">
+                            <a href="{% url 'gcp' %}" class="btn btn-primary">Explore</a>
+                        </div>
+                    </p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="/path/to/cloud-icon.png" class="card-img-top" alt="Cloud Icon">
-                    <div class="card-body">
-                        <h5 class="card-title">Cloud Service</h5>
-                        <p class="card-text">Description of the cloud service goes here.</p>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="/path/to/cloud-icon.png" class="card-img-top p-3" alt="Cloud Icon">
+                <h5 class="text-center card-title">Cloud Service</h5>
+                <div class="card-overlay">
+                    <h5 class="text-center card-title">Cloud Service Automation</h5>
+                    <p class="card-text">Description of the cloud service goes here.</p>
+                    <div class="automation-services">
+                        <h6>Available Services for Automation:</h6>
+                        <div class="services">
+                            <div>EC2</div>
+                            <div>VPC</div>
+                            <div>Subnet</div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="/path/to/cloud-icon.png" class="card-img-top" alt="Cloud Icon">
-                    <div class="card-body">
-                        <h5 class="card-title">Cloud Service</h5>
-                        <p class="card-text">Description of the cloud service goes here.</p>
+                    <div class="text-center mt-1">
+                        <a href="#" class="btn btn-primary">Explore</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Include Bootstrap JS and its dependencies below -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.10/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+{%endblock content%}
